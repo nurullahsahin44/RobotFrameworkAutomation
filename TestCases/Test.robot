@@ -16,7 +16,6 @@ Tomodvc_Sayfasi_001
 
 
 Yapilacak_is_Ekleme_002
-deneme
     Given Wait Until Page Contains Element   ${what needs to be done inputText}    timeout=15    error=DO NOT DISPLAYED inputText
     And steps.I write and press Key     deneme     ENTER
     Then sleep  5s
