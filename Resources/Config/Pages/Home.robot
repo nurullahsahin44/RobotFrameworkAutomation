@@ -3,6 +3,8 @@ ${what needs to be done inputText}     //input[contains(@placeholder,'What needs
 ${issue count}  //span[@class='todo-count']//*[contains(text(),'')]
 ${item left}  //span[@class='todo-count']/descendant-or-self::span[contains(text(),'items left') or contains(text(),'item left')]
 ${all button}   //a[.='All']
+${active button}    //a[contains(@href,'active')]
+${completed button}    //a[contains(@href,'completed')]
 ${first item}   (//*[@class='todo-list']//label)[1]
 ${first item checkbox}  (//*[@class='todo-list']//input[@type='checkbox'])[1]
 ${last item checkbox}  (//*[@class='todo-list']//input[@type='checkbox'])[last()]
@@ -13,4 +15,4 @@ ${select all button}    //label[contains(@for,'toggle-all') and text()='Mark all
 ${first selected item}  //*[@class='todo completed']//label
 ${last selected item}  (//*[@class='todo completed']//label)[last()]
 ${clear all button}   //button[@class='clear-completed']
-
+${all label in table}   //*[contains(@class,'todo-list')]//label

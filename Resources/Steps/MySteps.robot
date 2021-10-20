@@ -29,6 +29,12 @@ I write press Key and Select item
 
 I should see variable in table
     [Arguments]  ${variable}
+    ${elementKey}=  Set Variable   //*[contains(@class,'todo-list')]//label[text()='${variable}']
+    Element Should Contain  ${elementKey}   ${variable}
+
+
+I should see last variable in table
+    [Arguments]  ${variable}
     ${value}=   Get Text    ${last item}
     BuiltIn.Should be Equal As Strings   ${variable}  ${value}   msg=${variable} == ${value} does not Match
     Wait Until Page Contains Element   ${issue count}      timeout=15  error=DO NOT DISPLAYED ${issue count}
@@ -36,10 +42,19 @@ I should see variable in table
     Wait Until Page Contains Element   ${all button}      timeout=15  error=DO NOT DISPLAYED ${all button}
 
 
+I should not see variable in table
+    [Arguments]  ${variable}
+    Page should not contain element  ${variable}
+
+I should see VARIABLE in ELEMENTKEY
+    [Arguments]  ${variable}    ${elementKey}
+    Element Should Contain   ${elementKey}  ${variable}
+
+
 I will delete one item and verification with status
     [Arguments]  ${status}=unselect
     Run Keyword if  '${status}' == 'unselect'   unselectedDelete_S
-    Run Keyword if  '${status}' == 'select'   selectedDelete_S
+    ...  ELSE IF  '${status}' == 'select'   selectedDelete_S
     ...  ELSE   BuiltIn.Fail  msg=HAVE TO CHOOSE selected or unselected
 
 
