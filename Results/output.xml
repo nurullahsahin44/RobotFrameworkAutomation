@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.2 on win32)" generated="20211019 14:39:16.392" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.2 on win32)" generated="20211019 21:28:40.912" rpa="false">
 <suite id="s1" name="Test" source="D:\Users\nusahin\Documents\GitHub\ModaNisa_Interview\TestCases\Test.robot">
 <test id="s1-t1" name="deneme">
 <kw name="create session firefox" library="Base" type="setup">
@@ -10,27 +10,39 @@
 <arg>firefox</arg>
 <arg>options=add_argument("--ignore-certificate-errors");</arg>
 </arguments>
-<msg timestamp="20211019 14:39:17.858" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/vue/#'.</msg>
-<status status="PASS" starttime="20211019 14:39:17.858" endtime="20211019 14:39:22.333"></status>
+<msg timestamp="20211019 21:28:43.828" level="INFO">Opening browser 'firefox' to base url 'https://todomvc.com/examples/vue/#'.</msg>
+<status status="PASS" starttime="20211019 21:28:43.828" endtime="20211019 21:28:50.710"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20211019 14:39:22.334" endtime="20211019 14:39:22.708"></status>
+<status status="PASS" starttime="20211019 21:28:50.710" endtime="20211019 21:28:51.275"></status>
 </kw>
-<status status="PASS" starttime="20211019 14:39:17.858" endtime="20211019 14:39:22.708"></status>
+<status status="PASS" starttime="20211019 21:28:43.828" endtime="20211019 21:28:51.275"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>5</arg>
+<arg>[LOWER]</arg>
+</arguments>
+<assign>
+<var>${variable}</var>
+</assign>
+<msg timestamp="20211019 21:28:51.279" level="INFO">${variable} = nzewg</msg>
+<status status="PASS" starttime="20211019 21:28:51.275" endtime="20211019 21:28:51.279"></status>
 </kw>
 <kw name="Given Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>${what needs to be done inputText}</arg>
 <arg>timeout=15</arg>
-<arg>error=DO NOT DISPLAYED inputText</arg>
+<arg>error=DO NOT DISPLAYED ${what needs to be done inputText}</arg>
 </arguments>
-<status status="PASS" starttime="20211019 14:39:22.708" endtime="20211019 14:39:22.723"></status>
+<status status="PASS" starttime="20211019 21:28:51.279" endtime="20211019 21:28:51.311"></status>
 </kw>
-<kw name="And steps.I write and press Key" library="steps">
+<kw name="And MySteps.I write and press Key" library="MySteps">
 <arguments>
-<arg>deneme</arg>
+<arg>${variable}</arg>
 <arg>ENTER</arg>
 </arguments>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
@@ -40,7 +52,7 @@
 <arg>timeout=15</arg>
 <arg>error=DO NOT DISPLAYED inputText</arg>
 </arguments>
-<status status="PASS" starttime="20211019 14:39:22.724" endtime="20211019 14:39:22.736"></status>
+<status status="PASS" starttime="20211019 21:28:51.315" endtime="20211019 21:28:51.339"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -48,8 +60,8 @@
 <arg>${what needs to be done inputText}</arg>
 <arg>${variable}</arg>
 </arguments>
-<msg timestamp="20211019 14:39:22.737" level="INFO">Typing text 'deneme' into text field '//input[contains(@placeholder,'What needs to be done')]'.</msg>
-<status status="PASS" starttime="20211019 14:39:22.736" endtime="20211019 14:39:22.776"></status>
+<msg timestamp="20211019 21:28:51.339" level="INFO">Typing text 'nzewg' into text field '//input[contains(@placeholder,'What needs to be done')]'.</msg>
+<status status="PASS" starttime="20211019 21:28:51.339" endtime="20211019 21:28:51.431"></status>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <doc>Simulates user pressing key(s) to an element or on the active browser.</doc>
@@ -57,30 +69,118 @@
 <arg>${what needs to be done inputText}</arg>
 <arg>${key}</arg>
 </arguments>
-<msg timestamp="20211019 14:39:22.777" level="INFO">Sending key(s) ('ENTER',) to //input[contains(@placeholder,'What needs to be done')] element.</msg>
-<msg timestamp="20211019 14:39:22.784" level="INFO">Pressing special key ENTER to element.</msg>
-<status status="PASS" starttime="20211019 14:39:22.776" endtime="20211019 14:39:23.057"></status>
+<msg timestamp="20211019 21:28:51.431" level="INFO">Sending key(s) ('ENTER',) to //input[contains(@placeholder,'What needs to be done')] element.</msg>
+<msg timestamp="20211019 21:28:51.447" level="INFO">Pressing special key ENTER to element.</msg>
+<status status="PASS" starttime="20211019 21:28:51.431" endtime="20211019 21:28:51.742"></status>
 </kw>
-<status status="PASS" starttime="20211019 14:39:22.724" endtime="20211019 14:39:23.057"></status>
-</kw>
-<kw name="Then sleep" library="BuiltIn">
+<kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>5s</arg>
 </arguments>
-<msg timestamp="20211019 14:39:28.059" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20211019 14:39:23.058" endtime="20211019 14:39:28.059"></status>
+<msg timestamp="20211019 21:28:56.742" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211019 21:28:51.742" endtime="20211019 21:28:56.742"></status>
+</kw>
+<status status="PASS" starttime="20211019 21:28:51.311" endtime="20211019 21:28:56.742"></status>
+</kw>
+<kw name="Then MySteps.I will delete one item and verification" library="MySteps">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${issue count}</arg>
+</arguments>
+<assign>
+<var>${firstIssueCount}</var>
+</assign>
+<msg timestamp="20211019 21:28:56.790" level="INFO">${firstIssueCount} = 1</msg>
+<status status="PASS" starttime="20211019 21:28:56.742" endtime="20211019 21:28:56.790"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${firstIssueCount}' == ''</arg>
+<arg>I write and press Key</arg>
+<arg>test</arg>
+<arg>ENTER</arg>
+</arguments>
+<status status="PASS" starttime="20211019 21:28:56.790" endtime="20211019 21:28:56.790"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${issue count}</arg>
+</arguments>
+<assign>
+<var>${firstIssueCount}</var>
+</assign>
+<msg timestamp="20211019 21:28:56.818" level="INFO">${firstIssueCount} = 1</msg>
+<status status="PASS" starttime="20211019 21:28:56.794" endtime="20211019 21:28:56.818"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${firstIssueCount}' == '1'</arg>
+<arg>If exist 1 item do not see item left</arg>
+<arg>ELSE</arg>
+<arg>If exist items Delete and Verify item left Counts</arg>
+</arguments>
+<kw name="If exist 1 item do not see item left" library="MySteps">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>(//*[@class='todo-list']//button[@class='destroy'])[1]</arg>
+</arguments>
+<assign>
+<var>${ele}</var>
+</assign>
+<msg timestamp="20211019 21:28:56.834" level="INFO">${ele} = &lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="e587ce8e-f246-47a7-91e1-3aa5c3ccdd3b", element="b2a6e1a5-50b5-4165-8e99-df517f87c84d")&gt;</msg>
+<status status="PASS" starttime="20211019 21:28:56.822" endtime="20211019 21:28:56.834"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele}</arg>
+</arguments>
+<msg timestamp="20211019 21:28:56.834" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="e587ce8e-f246-47a7-91e1-3aa5c3ccdd3b", element="b2a6e1a5-50b5-4165-8e99-df517f87c84d")&gt;'</msg>
+<status status="PASS" starttime="20211019 21:28:56.834" endtime="20211019 21:28:56.850"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${item left}</arg>
+</arguments>
+<msg timestamp="20211019 21:28:56.862" level="INFO">Current page does not contain element '//span[@class='todo-count']/descendant-or-self::span[contains(text(),'item left')]'.</msg>
+<status status="PASS" starttime="20211019 21:28:56.850" endtime="20211019 21:28:56.862"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20211019 21:29:01.864" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211019 21:28:56.862" endtime="20211019 21:29:01.864"></status>
+</kw>
+<status status="PASS" starttime="20211019 21:28:56.818" endtime="20211019 21:29:01.864"></status>
+</kw>
+<status status="PASS" starttime="20211019 21:28:56.818" endtime="20211019 21:29:01.864"></status>
+</kw>
+<status status="PASS" starttime="20211019 21:28:56.742" endtime="20211019 21:29:01.864"></status>
 </kw>
 <kw name="close session" library="Base" type="teardown">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20211019 14:39:28.060" endtime="20211019 14:39:30.081"></status>
+<status status="PASS" starttime="20211019 21:29:01.864" endtime="20211019 21:29:05.584"></status>
 </kw>
-<status status="PASS" starttime="20211019 14:39:28.060" endtime="20211019 14:39:30.081"></status>
+<status status="PASS" starttime="20211019 21:29:01.864" endtime="20211019 21:29:05.584"></status>
 </kw>
-<status status="PASS" starttime="20211019 14:39:17.858" endtime="20211019 14:39:30.082" critical="yes"></status>
+<status status="PASS" starttime="20211019 21:28:43.828" endtime="20211019 21:29:05.584" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20211019 14:39:16.395" endtime="20211019 14:39:30.084"></status>
+<status status="PASS" starttime="20211019 21:28:40.920" endtime="20211019 21:29:05.584"></status>
 </suite>
 <statistics>
 <total>
@@ -94,7 +194,7 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20211019 14:39:16.816" level="ERROR">Error in file 'D:\Users\nusahin\Documents\GitHub\ModaNisa_Interview\TestCases\Test.robot': Importing test library 'RequestLibrary' failed: ModuleNotFoundError: No module named 'RequestLibrary'
+<msg timestamp="20211019 21:28:41.926" level="ERROR">Error in file 'D:\Users\nusahin\Documents\GitHub\ModaNisa_Interview\TestCases\Test.robot': Importing test library 'RequestLibrary' failed: ModuleNotFoundError: No module named 'RequestLibrary'
 Traceback (most recent call last):
   None
 PYTHONPATH:
@@ -141,6 +241,6 @@ PYTHONPATH:
   C:\Program Files (x86)\testerq\python\lib\site-packages\win32
   C:\Program Files (x86)\testerq\python\lib\site-packages\win32\lib
   C:\Program Files (x86)\testerq\python\lib\site-packages\Pythonwin</msg>
-<msg timestamp="20211019 14:39:16.824" level="WARN">Imported resource file 'D:\Users\nusahin\Documents\GitHub\ModaNisa_Interview\Resources\Config\Pages\Login.robot' is empty.</msg>
+<msg timestamp="20211019 21:28:41.998" level="WARN">Imported resource file 'D:\Users\nusahin\Documents\GitHub\ModaNisa_Interview\Resources\Config\Pages\Login.robot' is empty.</msg>
 </errors>
 </robot>
