@@ -21,9 +21,11 @@ Test caseleri   TestCases.xlsx   içerisinden göz atabilirsiniz.
 ----------------------Dosya Yapısı---------------------------
 
 ***Library
+
 Robot framework'den bağımsız olarak CustomLibrary yazmak isterseniz eğer Library içerisinde tutulabilir, PYTHON dilinde olmalıdır
 
 ***Resources
+
 Otomasyon için tüm kaynaklar bu alanda tutulmalıdır,
 Alt başlıklarından Config içerisinde tüm proje için kullanılacak değişkenlerimiz mevcuttur, URL - Username vb.
 Pages içerinde ise sayfa sayfa elementler tutulmaktaır, Ana Sayfaya ait elementler veya Giriş Sayfasına ait elementler için düşünebilirsiniz. Page Object Model
