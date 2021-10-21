@@ -31,7 +31,7 @@ Todo_Add_Issue_Select_004
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
-    Then I click on any checkbox and see as a DONE   ${last item checkbox}   ${variable}
+    Then I click on any checkbox and see as a DONE   ${last item checkbox}
 
 
 Todo_Add_Issue_Select_Remove_005
@@ -39,7 +39,7 @@ deneme
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
-    Then I click on any checkbox and see as a DONE   ${last item checkbox}   ${variable}
+    Then I click on any checkbox and see as a DONE   ${last item checkbox}
     Then I will delete one item and verification with status   select
 
 
@@ -48,17 +48,17 @@ Todo_Add_MoreIssues_ClearCompleted button_006
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
-    Then I click on any checkbox and see as a DONE   ${last item checkbox}   ${variable}
+    Then I click on any checkbox and see as a DONE   ${last item checkbox}
 
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
-    Then I click on any checkbox and see as a DONE   ${last item checkbox}   ${variable}
+    Then I click on any checkbox and see as a DONE   ${last item checkbox}
 
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
-    Then I click on any checkbox and see as a DONE   ${last item checkbox}   ${variable}
+    Then I click on any checkbox and see as a DONE   ${last item checkbox}
 
     When click element  ${clear all button}
     Then List Should be empty
@@ -68,7 +68,7 @@ Todo_Add_Issue_All-Active-Completed buttons_007
     ${firstVariable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${firstVariable}     ENTER
     And I should see VARIABLE in ELEMENTKEY  ${firstVariable}   ${last item}
-    Then I click on any checkbox and see as a DONE   ${last item checkbox}   ${firstVariable}
+    Then I click on any checkbox and see as a DONE   ${last item checkbox}
 
     ${secondVariable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${secondVariable}     ENTER
