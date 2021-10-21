@@ -8,9 +8,6 @@ Library   JSONLibrary
 Resource  Resources/Config/Environments/dev.robot
 
 *** Keywords ***
-create session chrome
-    open browser  about:blank  chrome
-    maximize browser window
 
 I write and press Key
     [Arguments]  ${elementKey}  ${variable}    ${key}

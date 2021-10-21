@@ -8,7 +8,7 @@ Resource  Resources/Config/Pages/Login.robot
 Resource  Resources/Steps/Base.robot
 Resource  Resources/Steps/MySteps.robot
 
-Test Setup   Base.create session firefox
+Test Setup   Base.create session chrome
 Test Teardown  Base.close session
 
 *** Test Cases ***
@@ -35,6 +35,7 @@ Todo_Add_Issue_Select_004
 
 
 Todo_Add_Issue_Select_Remove_005
+deneme
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
