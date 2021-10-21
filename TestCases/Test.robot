@@ -12,29 +12,29 @@ Test Setup   Base.create session firefox
 Test Teardown  Base.close session
 
 *** Test Cases ***
-Tomodvc_Sayfasi_001
+Todomvc_Page_Display
     Wait Until Page Contains Element   ${what needs to be done inputText}    timeout=15    error=DO NOT DISPLAYED ${what needs to be done inputText}
 
 
-Yapilacak_is_Ekleme_002
+Todo_Add_Issue_002
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     Then MySteps.I should see last variable in table  ${variable}
 
 
-Yapilacak_is_Ekleme_SecilmedenSilme_003
+Todo_Add_Issue_Unselect_Remove_003
     Then MySteps.I will delete one item and verification with status  unselect
     Then List Should be empty
 
 
-Yapilacak_is_Eklenilmesi_Secilmesi_004
+Todo_Add_Issue_Select_004
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
     Then I click on any checkbox and see as a DONE   ${last item checkbox}   ${variable}
 
 
-Yapilacak_is_Ekleme_SecilerekSilme_005
+Todo_Add_Issue_Select_Remove_005
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
@@ -43,7 +43,7 @@ Yapilacak_is_Ekleme_SecilerekSilme_005
 
 
 
-Yapilacak_is_BirdenFazla_Ekleme_ClearCompleted_006
+Todo_Add_MoreIssues_ClearCompleted button_006
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
@@ -63,7 +63,7 @@ Yapilacak_is_BirdenFazla_Ekleme_ClearCompleted_006
     Then List Should be empty
 
 
-Yapilacak_is_Ekleme_All_Active_Completed_007
+Todo_Add_Issue_All-Active-Completed buttons_007
     ${firstVariable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${firstVariable}     ENTER
     And I should see VARIABLE in ELEMENTKEY  ${firstVariable}   ${last item}
@@ -71,12 +71,15 @@ Yapilacak_is_Ekleme_All_Active_Completed_007
 
     ${secondVariable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${secondVariable}     ENTER
+    And I should see VARIABLE in ELEMENTKEY  ${secondVariable}   ${last item}
 
     ${thirdVariable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${thirdVariable}     ENTER
+    And I should see VARIABLE in ELEMENTKEY  ${thirdVariable}   ${last item}
 
     ${fourthVariable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${fourthVariable}     ENTER
+    And I should see VARIABLE in ELEMENTKEY  ${fourthVariable}   ${last item}
 
     click element   ${all button}
     And MySteps.I should see variable in table  ${firstVariable}
