@@ -27,12 +27,15 @@ Robot framework'den bağımsız olarak CustomLibrary yazmak isterseniz eğer Lib
 ***Resources
 
 Otomasyon için tüm kaynaklar bu alanda tutulmalıdır,
+
 Alt başlıklarından Config içerisinde tüm proje için kullanılacak değişkenlerimiz mevcuttur, URL - Username vb.
+
 Pages içerinde ise sayfa sayfa elementler tutulmaktaır, Ana Sayfaya ait elementler veya Giriş Sayfasına ait elementler için düşünebilirsiniz. Page Object Model
 
 ***Steps
 
 Base içerisinde tüm proje genelinde kullanılabilecek steps'ler bulunmaktadır, tarayıcıyı ac - tarayıcıyı kapat  vb.
+
 MySteps içerisinde robot framework'ün sağladığı steps'lerin birleşimi ile daha anlaşılır steps'ler yazmamızı sağlamaktadır.Custom Library için RobotFramework'ün yetersiz kaldığı noktalarda , burada ise varolanların birleşimi ile daha anlaşılır steps'ler yazmamızı saglar.
 
 ***Results
@@ -46,6 +49,7 @@ Bu alanda sadece case'ler bulunmaktadır, altına yeni klasörler açıp modül 
 ***venv
 
 Python projelerinin versiyon bağımsızlığını ortadan kaldırmak adına olusturdum.
+
 Virtual Environment anlamına gelmektedir.
 
 ***.gitignore
