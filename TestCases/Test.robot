@@ -35,7 +35,6 @@ Todo_Add_Issue_Select_004
 
 
 Todo_Add_Issue_Select_Remove_005
-deneme
     ${variable}    generate random string   5   [LOWER]
     And MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
     And MySteps.I should see last variable in table  ${variable}
@@ -99,3 +98,12 @@ Todo_Add_Issue_All-Active-Completed buttons_007
     And MySteps.I should not see variable in table  ${secondVariable}
     And MySteps.I should not see variable in table  ${thirdVariable}
     And MySteps.I should not see variable in table  ${fourthVariable}
+
+
+Todo_Add_Issueses_Random_SelectDone_008
+    ${list}=     Create Issue RANDOM and loop count   8
+    ${randomText}=     Evaluate   random.choice(${list})  random
+    ${xpath}=  Set variable     //*[@class='todo-list']//label[text()='${randomText}']/preceding-sibling::input[@type='checkbox']
+    click element   ${xpath}
+    Should See DONE in List   ${randomText}
+    Sleep  3s

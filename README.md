@@ -74,6 +74,8 @@ Tüm senaryolar yer almaktadır.
 
 Hazır komutları kullanabilirsiniz.
 
+SonucDosyasi icerisinde olusacak report.html belgesini açarak raporlara bakabilirsiniz,
+
 Test ismine göre başlatmak isterseniz,
 
 robot -d SonucDosyasi -t "testismi"  DosyaUzantısı

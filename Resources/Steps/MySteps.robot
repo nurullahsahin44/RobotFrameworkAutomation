@@ -5,6 +5,7 @@ Library   String
 Library   BuiltIn
 Library   FakerLibrary
 Library   JSONLibrary
+Library   Collections
 Resource  Resources/Config/Environments/dev.robot
 
 *** Keywords ***
@@ -27,6 +28,21 @@ I write press Key and Select item
     Press Keys  ${what needs to be done inputText}    ${key}
     click element  ${first item checkbox}
     Sleep  5s
+
+
+#ilgili sayfada birden fazla issue olusturmak için yazılmıstır,
+#loop count : döngü sayisi, issue sayisi
+#random üretilen isimleri liste olarak döndürmektedir,
+Create Issue RANDOM and loop count
+    [Arguments]  ${loop count}
+    ${list}  Create List
+    FOR  ${index}   IN RANGE   ${loop count}
+    ${variable}    generate random string   5   [LOWER]
+    MySteps.I write and press Key   ${what needs to be done inputText}    ${variable}     ENTER
+    Collections.Append To List  ${list}   ${variable}
+    END
+    [Return]  ${list}
+
 
 
 #uygulama bazlı bir fonksiyondur, tüm listenin içerisinde bulunan degerlerden text'ine göre ekranda arama yapmaktadır
@@ -112,6 +128,7 @@ If exist items Delete and Verify item left Counts
     ${lastIssueCount}=   Get Text    ${issue count}
     BuiltIn.Should be Equal As Strings   ${firstIssueCount}  ${lastIssueCount}   msg=${firstIssueCount} == ${lastIssueCount} does not Match
 
+
 #parametrik olarak gelen degeri done'a alınması için yazılmıstır,
 I click on any checkbox and see as a DONE
     [Arguments]  ${elementKey}
@@ -122,6 +139,22 @@ I click on any checkbox and see as a DONE
     Then BuiltIn.Should be Equal As Strings   ${firstIssueCountResponse}  ${firstIssueCountAfter}   msg=${firstIssueCountResponse} == ${firstIssueCountAfter} does not Match
     sleep  5s
 
+
 #uygulama bazlı olup, ekranda herhangi bir item olmadıgını kontrol eder,
 List Should be empty
     Page should not contain element     ${last item}
+
+
+#parametrik olarak gelen elementKey eğer ekranda var ise TIKLA, yoksa herhangi birşey yapma
+If exist ELEMENT click to
+    [Arguments]  ${elementKey}
+    ${status}=  Run Keyword and return status
+    ...  Page should contain element   ${elementKey}
+    Run Keyword if  ${status}   click element  ${elementKey}
+
+
+#parametrik olarak gelen Text sayfada DONE olarak görünme kontrolü yapilmaktadir,
+Should See DONE in List
+    [Arguments]  ${elementText}
+    Page should contain element     //*[@class='todo completed']//label[text()='${elementText}']
+
